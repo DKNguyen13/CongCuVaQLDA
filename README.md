@@ -1,2 +1,0 @@
-# CongCuVaQLDA
-Shoe shop
