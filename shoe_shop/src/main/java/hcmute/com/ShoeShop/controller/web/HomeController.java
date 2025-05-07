@@ -74,6 +74,6 @@ public class HomeController {
 
     @GetMapping("/blog")
     public String blog(){
-        return "/user/blog";
+        return "user/blog";
     }
 }

@@ -36,14 +36,14 @@ public class AdminInventoryController {
         model.addAttribute("totalPages", inventoryPage.getTotalPages());
         model.addAttribute("totalItems", inventoryPage.getTotalElements());
 
-        return "/admin/inventory/inventory-warehouse";
+        return "admin/inventory/inventory-warehouse";
     }
     @GetMapping("/insertPage")
     public String insertProductPage(Model model) {
         InventoryDto inventory = new InventoryDto();
         model.addAttribute("inventory", inventory);
         model.addAttribute("details", productDetailRepository.findAll());
-        return "/admin/inventory/inventory-add";
+        return "admin/inventory/inventory-add";
     }
 
     @PostMapping("/save")
@@ -71,7 +71,7 @@ public class AdminInventoryController {
         model.addAttribute("inventory", inventoryDto);
         model.addAttribute("id", inventory.getId());
         model.addAttribute("details", productDetailRepository.findAll());
-        return "/admin/inventory/inventory-edit";
+        return "admin/inventory/inventory-edit";
     }
 
     @PostMapping("/update")

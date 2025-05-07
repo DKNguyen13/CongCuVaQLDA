@@ -39,7 +39,7 @@ public class AdminProductController {
     public String insertProductPage(Model model) {
         model.addAttribute("categories", categoryService.findAll());
         model.addAttribute("product", new ProductDto());
-        return "/admin/products/product-add";
+        return "admin/products/product-add";
     }
 
     @PostMapping("/save")
@@ -65,7 +65,7 @@ public class AdminProductController {
         model.addAttribute("sizePriceMap", sizePriceMap);
 
 
-        return "/admin/products/product-edit";
+        return "admin/products/product-edit";
     }
 
 
@@ -118,7 +118,7 @@ public class AdminProductController {
         double averageStar = ratings.stream().mapToInt(Rating::getStar).average().orElse(0.0);
         averageStar = Math.round(averageStar * 10) / 10.0;
         model.addAttribute("avgrating", averageStar);
-        return "/user/single-product";
+        return "user/single-product";
     }
 
     @GetMapping("")
@@ -129,6 +129,6 @@ public class AdminProductController {
         model.addAttribute("products", productPage.getContent());
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", productPage.getTotalPages());
-        return "/admin/products/product-list";
+        return "admin/products/product-list";
     }
 }

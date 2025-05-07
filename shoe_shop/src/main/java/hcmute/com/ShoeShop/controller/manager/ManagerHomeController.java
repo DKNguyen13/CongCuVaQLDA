@@ -22,7 +22,7 @@ public class ManagerHomeController {
     public String profile(Model model, HttpSession session){
         Users user = (Users) session.getAttribute("user");
         model.addAttribute("user", user);
-        return "/manager/pages-profile";
+        return "manager/pages-profile";
     }
 
 }

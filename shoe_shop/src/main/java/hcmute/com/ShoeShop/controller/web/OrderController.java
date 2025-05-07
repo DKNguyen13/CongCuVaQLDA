@@ -70,7 +70,7 @@ public class OrderController {
 
         model.addAttribute("orderPage", orderPage);
 //        orderService.orderCart(2, 150, PayOption.COD);
-        return "/user/order";
+        return "user/order";
     }
 
     @PostMapping("/pay")

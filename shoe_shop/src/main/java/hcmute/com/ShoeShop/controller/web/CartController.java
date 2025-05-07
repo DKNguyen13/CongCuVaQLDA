@@ -64,7 +64,7 @@ public class CartController {
 
         model.addAttribute("cart", cart);
 
-        return "/user/cart";
+        return "user/cart";
     }
 
     @PostMapping("/add")
